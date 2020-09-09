@@ -1,0 +1,17 @@
+[package]
+name = "fetch-rs"
+version = "0.1.0"
+authors = ["Joey Ezechiels <joey@acc.nl>"]
+edition = "2018"
+description = "A rusty FFI to the JavaScript `fetch` API that works on NodeJS as well as in web browsers."
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/jjpe/rusty-fetch.git"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+js-sys = "0.3"
+serde = { version = "1.0", features = ["derive"] }
+wasm-bindgen = { version = "0.2", features = ["serde-serialize"]  }
+wasm-bindgen-futures = "0.4"
