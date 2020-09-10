@@ -14,7 +14,7 @@ pub mod log;
 
 
 #[cfg(all(target_arch = "wasm32"))]
-mod examples {
+pub mod examples {
     use super::*;
 
 
@@ -69,14 +69,14 @@ mod examples {
         ))
     }
 
-    /// This example shows how to fetch the HTML resource
-    /// located at http://google.com.
+    /// This example shows how to fetch the XML resource
+    /// located at http://localhost:8080/xml
     #[wasm_bindgen] // <- Allow calling this fn from JavaScript land for easy testing
     #[allow(non_snake_case)]
     pub async fn test__text_get_request() -> Result<JsValue, JsValue> {
         // 1. Fetch a `url` using the `GET` method and deserialize the
         //    response body text to a `String`:
-        let text = Request::get("http://google.com")
+        let text = Request::get("http://localhost:8080/xml")
         //  .with_header("foo", "bar") // <- Attach a header, can be done repeatedly
             .fetch_text()
             .await?;
