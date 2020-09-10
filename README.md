@@ -67,5 +67,5 @@ pub async fn perform_post_request(url: String) -> JsValue {
 ```
 
 
-For more examples, check out [the examples module](./src/lib.rs)
+For more examples, check out [the examples module](./src/lib.rs#L17)
 in the src directory.
