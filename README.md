@@ -16,7 +16,7 @@ version of the `fetch` API directly are:
 ## Usage
 
 **NOTE**: Keep in mind that:
-* This crate is _only_ usable on WASM. This means that any crate that uses this
+* This crate is _only_ usable on WASM. This means that any crate that uses
   `fetch-rs` will stop compiling to native code.
 * Because the `fetch` API is inherently `async`, so is this API. This property
   is infectious, meaning that any code using this crate would to well to convert
