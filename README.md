@@ -34,16 +34,12 @@ Add this to your Cargo.toml:
 fetch-rs = "0.1"
 ```
 
-### Importing the correct types
-
-``` rust
-use fetch_rs::{Method, Request};
-```
-
 ### Create and send request
 
 1. `GET`-request:
 ``` rust
+use fetch_rs::Request;
+
 #[wasm_bindgen] // <-- This makes the fn callable from JavaScript for easy testing
 pub async fn perform_get_request(url: String) -> JsValue {
     let result: JsValue = Request::get(&url).fetch().await;
@@ -54,6 +50,8 @@ pub async fn perform_get_request(url: String) -> JsValue {
 
 2. `POST`-request:
 ``` rust
+use fetch_rs::Request;
+
 #[wasm_bindgen] // <-- This makes the fn callable from JavaScript for easy testing
 pub async fn perform_post_request(url: String) -> JsValue {
     let result: JsValue = Request::post(&url).fetch().await;
