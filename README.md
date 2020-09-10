@@ -15,14 +15,14 @@ version of the `fetch` API directly are:
 
 ## Usage
 
-**NOTE**: Keep in mind that:
+**NOTE** Keep in mind that:
 * This crate is _only_ usable on WASM. This means that any crate that uses
   `fetch-rs` will stop compiling to native code.
 * Because the `fetch` API is inherently `async`, so is this API. This property
   is infectious, meaning that any code using this crate would to well to convert
   to async as well.
 * There are limitations that are imposed by virtue of depending on the
-  [node-fetch](https://www.npmjs.com/package/node-fetch) NPM package
+  [node-fetch](https://www.npmjs.com/package/node-fetch) NPM package.
   See the NPM page for more details on that.
 
 ### preparation
