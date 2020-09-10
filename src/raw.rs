@@ -2,7 +2,7 @@
 
 use wasm_bindgen::prelude::*;
 
-#[wasm_bindgen(module = "/fetch_ffi.js")]
+#[wasm_bindgen(module = "/src/ffi.js")]
 extern "C" {
     pub async fn fetch_json(
         url: &str,
