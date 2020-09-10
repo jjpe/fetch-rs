@@ -1,4 +1,7 @@
 {
+  "name": "fetch-rs",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "build": "webpack",
     "serve": "webpack-dev-server"
