@@ -24,7 +24,9 @@ version of the `fetch` API directly are:
 
 ### preparation
 
-Install `wasm-pack` by executing `cargo install wasm-pack`
+
+If you aim to test code using e.g. NodeJS or the browser, install
+`wasm-pack` by executing `cargo install wasm-pack`.
 
 ### Cargo.toml
 
@@ -42,7 +44,9 @@ use fetch_rs::Request;
 
 #[wasm_bindgen] // <-- This makes the fn callable from JavaScript for easy testing
 pub async fn perform_get_request(url: String) -> JsValue {
-    let result: JsValue = Request::get(&url).fetch().await;
+    let result: JsValue = Request::get(&url)
+        .fetch_text() // fetch the result as text
+        .await;
     info!("[test] result: {:?}", result); // Write test output
     result // Since the fn is async, return a Promise / Future
 }
@@ -54,8 +58,14 @@ use fetch_rs::Request;
 
 #[wasm_bindgen] // <-- This makes the fn callable from JavaScript for easy testing
 pub async fn perform_post_request(url: String) -> JsValue {
-    let result: JsValue = Request::post(&url).fetch().await;
+    let result: JsValue = Request::post(&url)
+    .fetch_text() // fetch the result as text
+    .await;
     info!("[test] result: {:?}", result); // Write test output
     result // Since the fn is async, return a Promise / Future
 }
 ```
+
+
+For more examples, check out (the examples module)[./src/lib.rs]
+in the src directory.
